@@ -1,11 +1,3 @@
-/**
- * VibeCheck API (CPE 411L)
- *
- * This server:
- * - runs on your computer (localhost)
- * - listens on a port (default: 3000)
- * - responds to browser requests (endpoints) using JSON
- */
 
 const express = require("express");
 const cors = require("cors");
