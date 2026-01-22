@@ -54,3 +54,10 @@ document.getElementById("btnSecret").addEventListener("click", async () => {
   const data = await getJSON(`${API_BASE}/api/secret?code=411L`);
   show(data);
 });
+
+// Multiplication counter button logic
+let multiplyCounter = 1;
+document.getElementById("btnMultiply").addEventListener("click", async () => {
+  multiplyCounter *= 2;
+  show({ message: `Multiplication Counter: ${multiplyCounter}` });
+});
