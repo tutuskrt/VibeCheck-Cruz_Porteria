@@ -3,7 +3,22 @@ const out = document.getElementById("out");
 const API_BASE = "http://localhost:3000";
 
 function show(obj) {
-  out.textContent = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2);
+  if (typeof obj === "string") {
+    out.textContent = obj;
+    return;
+  }
+  // Show message and counter in a readable way
+  if (obj.message && typeof obj.smashes === "number") {
+    out.textContent = `${obj.message}\nTotal smashes: ${obj.smashes}`;
+  } else if (obj.message) {
+    out.textContent = obj.message;
+  } else if (obj.fortune) {
+    out.textContent = obj.fortune;
+  } else if (obj.joke) {
+    out.textContent = obj.joke;
+  } else {
+    out.textContent = JSON.stringify(obj, null, 2);
+  }
 }
 
 async function getJSON(url) {
