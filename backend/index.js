@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
-//dwjndjnaldwkdw
+
 // CORS lets your frontend page call your backend API.
 app.use(cors());
 
